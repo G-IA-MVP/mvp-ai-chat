@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVP AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- TELA DE LOGIN -->
+    <div id="login-screen">
+        <h1 class="logo">MVP AI</h1>
+
+        <div class="login-box">
+            <input type="email" id="email" placeholder="Seu e-mail">
+            <input type="password" id="password" placeholder="Sua senha">
+            <button id="login-btn">Entrar</button>
+        </div>
+    </div>
+
+    <!-- TELA PRINCIPAL DO APP -->
+    <div id="app" class="hidden">
+
+        <!-- MENU COM +300 IAs -->
+        <aside id="menu">
+            <h2>Modelos de IA</h2>
+            <input type="text" id="search-ia" placeholder="Buscar IA...">
+
+            <div id="ia-list">
+                <!-- 300 modelos carregados automaticamente pelo script.js -->
+            </div>
+        </aside>
+
+        <!-- ÁREA DO CHAT -->
+        <main id="chat-area">
+            <div id="top-bar">
+                <h2 id="chat-name">Nova Conversa</h2>
+            </div>
+
+            <div id="messages"></div>
+
+            <div id="input-area">
+                <textarea id="user-input" placeholder="Digite sua mensagem..."></textarea>
+                <button id="send-btn">Enviar</button>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
