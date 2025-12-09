@@ -1,56 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MVP AI</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MVP AI — Chat</title>
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="manifest" href="/manifest.json" />
 </head>
-
 <body>
+  <!-- LOGIN / SIGNUP -->
+  <div id="login-section" class="center-card">
+    <h1 class="brand">MVP AI</h1>
+    <input id="email" placeholder="Seu e-mail" type="email" />
+    <input id="password" placeholder="Senha (mín 6)" type="password" />
+    <div class="row">
+      <button id="btn-signup" class="btn neon">Criar conta</button>
+      <button id="btn-login" class="btn">Entrar</button>
+    </div>
+    <p class="muted">Menores usem sob supervisão do responsável.</p>
+  </div>
 
-    <!-- TELA DE LOGIN -->
-    <div id="login-screen">
-        <h1 class="logo">MVP AI</h1>
+  <!-- APP PRINCIPAL -->
+  <div id="chat-section" class="app hidden">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <h2>MVP AI</h2>
+        <div id="user-email" class="muted small"></div>
+        <button id="btn-logout" class="btn small ghost">Sair</button>
+      </div>
 
-        <div class="login-box">
-            <input type="email" id="email" placeholder="Seu e-mail">
-            <input type="password" id="password" placeholder="Sua senha">
-            <button id="login-btn">Entrar</button>
+      <div class="search">
+        <input id="search-persona" placeholder="Procurar IA..." />
+      </div>
+
+      <div id="persona-list" class="persona-list"></div>
+
+      <div class="sidebar-footer">
+        <button id="btn-new-chat" class="btn neon small">Novo chat</button>
+        <button id="btn-install" class="btn small" style="display:none">Instalar</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="chat-header">
+        <h3 id="chat-title">Conversa nova</h3>
+        <div class="header-right">
+          <select id="select-persona"></select>
         </div>
-    </div>
+      </header>
 
-    <!-- TELA PRINCIPAL DO APP -->
-    <div id="app" class="hidden">
+      <section id="messages" class="messages"></section>
 
-        <!-- MENU COM +300 IAs -->
-        <aside id="menu">
-            <h2>Modelos de IA</h2>
-            <input type="text" id="search-ia" placeholder="Buscar IA...">
+      <div class="composer">
+        <textarea id="input-text" placeholder="Escreva sua mensagem..."></textarea>
+        <div class="composer-actions">
+          <button id="btn-send" class="btn neon">Enviar</button>
+        </div>
+      </div>
+    </main>
+  </div>
 
-            <div id="ia-list">
-                <!-- 300 modelos carregados automaticamente pelo script.js -->
-            </div>
-        </aside>
-
-        <!-- ÁREA DO CHAT -->
-        <main id="chat-area">
-            <div id="top-bar">
-                <h2 id="chat-name">Nova Conversa</h2>
-            </div>
-
-            <div id="messages"></div>
-
-            <div id="input-area">
-                <textarea id="user-input" placeholder="Digite sua mensagem..."></textarea>
-                <button id="send-btn">Enviar</button>
-            </div>
-        </main>
-
-    </div>
-
-    <script src="script.js"></script>
-
+  <script type="module" src="/script.js"></script>
 </body>
 </html>
+
